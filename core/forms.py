@@ -4,8 +4,6 @@ from .models import Pessoa,Veiculo,MovRotativo,Mensalista,MovMensalista
 
 class PessoaForm(ModelForm):
     class Meta:
-        #para criar um form relacionado com um modelo 
-        # é passado o modelo em questão para a variável model da class Meta 
         model = Pessoa
         fields = '__all__'
 

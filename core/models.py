@@ -1,8 +1,6 @@
 from django.db import models
 import math
 
-# Create your models here.
-
 
 class Pessoa(models.Model):
     """ classe que registra cada cliente do estacionamento"""

@@ -36,7 +36,5 @@ urlpatterns = [
     path('core/movMensal_novo/', views.movMensal_novo, name='movMensal_novo'),
     path('core/movMensal_update/<int:id>/', views.movMensal_update, name='movMensal_update'),
     path('core/movMensal_delete/<int:id>/', views.movMensal_delete, name='movMensal_delete'),
-    # os caminhos que tem core/caminho são os caminhos que não tem template proprios
-    # estes caminhos saem de um template e vão para o core, sem o core/ o django não os identifica
     
 ]
