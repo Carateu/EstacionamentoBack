@@ -1,0 +1,15 @@
+<a href="{% url 'core:home' %}">Home</a>
+<h2>Lista de Clientes</h2>
+<ul>
+    {% for pessoa in pessoas %}
+    <li><a href="{% url 'core:pessoa_update' pessoa.id %}">Nome: {{pessoa.nome}} -
+        Telefone: {{pessoa.telefone}}</a></li>
+    {% endfor %}
+</ul>
+<br>
+<h2>Adicionar novo cliente</h2>
+<form action="{% url 'core:pessoa_nova' %}" method="POST">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Cadastrar</button>
+</form>

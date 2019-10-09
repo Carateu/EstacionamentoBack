@@ -1,0 +1,6 @@
+<h2>Tem certeza que quer deletar: {{movMensal}}</h2>
+
+<form action="{% url 'core:movMensal_delete' movMensal.id%}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>

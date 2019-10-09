@@ -1,0 +1,16 @@
+<a href="{% url 'core:home' %}">Home</a>
+<h2>Lista de veiculos</h2>
+<ul>
+    {% for veiculo in veiculos %}
+    <li><a href="{% url 'core:veiculo_update' veiculo.id%}">Proprietário: 
+        {{veiculo.proprietario}} - Placa: {{veiculo.placa}} 
+        - Marca: {{veiculo.marca}}</a></li>
+    {% endfor %}
+</ul>
+<br>
+<h2>Adicionar novo veiculo</h2>
+<form action="{% url 'core:veiculo_novo' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Cadastrar</button>
+</form>

@@ -1,0 +1,17 @@
+<a href="{% url 'core:home' %}">Home</a>
+<h2>Movimentos rotativos do estacionamento</h2>
+<ul>
+    {% for movs in movrotativos %}
+    <li><a href="{% url 'core:rotativo_update' movs.id %}">
+        CheckIN: {{movs.checkin}} - CheckOUT: {{movs.checkout}} - 
+        Veiculo: {{movs.veiculo}} - Pago: {{movs.pago}}</a>
+    </li>
+    {% endfor %}
+</ul>
+<br>
+<h2>Novo movimento rotativo</h2>
+<form action="{% url 'core:novo_rotativo' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Cadastrar</button>
+</form>
